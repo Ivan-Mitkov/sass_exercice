@@ -1,0 +1,33 @@
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, 
+        rgba($color-primary-light, 0.7), 
+        rgba($color-primary-dark, 0.7)),
+        url("../img/hero.jpg");
+    background-size: cover;
+    /* top of the image is not changing */
+    background-position: top;
+    /* in order to use absolute position in logo-box have to use relative position in parent */
+    position: relative;
+    clip-path: polygon( 0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo {
+        height: 3.5rem;
+    }
+    &__text-box-header {
+        /* parvo postaviame gornia liav na 40 i 50% ot agala i sled tova go translirame na 50% */
+        position: absolute;
+        /* 40 are in relation to the parent element */
+        top: 40%;
+        left: 50%;
+        /* -50 i -50 are in relation to the same element */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

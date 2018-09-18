@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* not adding marging and padding to the box */
+    /* using box sizing from the body box sizing is not inherrited but putting in * make it inhereted */
+    box-sizing: inherit;
+}
+
+/* the root size is set in the html selector */
+
+html {
+    /* the default is 16px but if the user changes it will affect all that's way dont put 10px */
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
