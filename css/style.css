@@ -259,8 +259,12 @@ body {
       transform: rotateY(180deg); }
       .card__side--back-1 {
         background: linear-gradient(to right bottom, #ff7730, #ffb900); }
+      .card__side--back-2 {
+        background: linear-gradient(to right bottom, #28b485, #7ed56f); }
+      .card__side--back-3 {
+        background: linear-gradient(to right bottom, #5643fa, #2998ff); }
   .card:hover .card__side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
 

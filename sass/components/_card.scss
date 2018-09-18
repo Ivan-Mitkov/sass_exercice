@@ -32,16 +32,17 @@
                 background:linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light );
             }
             &-2{
-                
+                background:linear-gradient(to right bottom, $color-primary-dark, $color-primary-light );
             }
             &-3{
-                
+                background:linear-gradient(to right bottom, $color-tertiary-dark, $color-tertiary-light );
             }
         }
     }   
     //when we hover card we want side to change we dont't put hover on side because we will have more sides
     &:hover &__side--front{
-        transform: rotateY(180deg);
+        //- ist to move in the right direction
+        transform: rotateY(-180deg);
     }
     &:hover &__side--back{
         transform: rotateY(0);
