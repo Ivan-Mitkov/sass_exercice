@@ -1,0 +1,50 @@
+.card{
+    //in order to see card like its moving close to us when rotating we need to add perspective to the parent element
+    //lower the value of perspective more dramatic the effect
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    //if there is no height and widh the elements colapse and because the position is absolute we can't use clearfixed
+    //like when we use float
+    height: 30rem;
+    
+    &__side{       
+        height: 30rem;
+        transition: all .8s ease;
+        border-radius: 5px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black,0.15);
+        //in order to be on top of each other
+        position:absolute;
+        top: 0;
+        left: 0;
+        //because there a absolute position the fill there width so we need to give them a width
+        width: 100%;
+        //to view the back face
+        backface-visibility:hidden;
+        &--front{
+            background-color:$color-white;
+            
+        }
+        &--back{
+            
+            transform: rotateY(180deg);
+            &-1{
+                background:linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light );
+            }
+            &-2{
+                
+            }
+            &-3{
+                
+            }
+        }
+    }   
+    //when we hover card we want side to change we dont't put hover on side because we will have more sides
+    &:hover &__side--front{
+        transform: rotateY(180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+   
+}
