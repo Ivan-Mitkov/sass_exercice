@@ -1,4 +1,5 @@
 .card{
+    //FUNCTIONALITY
     //in order to see card like its moving close to us when rotating we need to add perspective to the parent element
     //lower the value of perspective more dramatic the effect
     perspective: 150rem;
@@ -6,12 +7,14 @@
     position: relative;
     //if there is no height and widh the elements colapse and because the position is absolute we can't use clearfixed
     //like when we use float
-    height: 30rem;
+    height: 50rem;
     
     &__side{       
-        height: 30rem;
+        height: 50rem;
         transition: all .8s ease;
         border-radius: 5px;
+        //image overflow border radius so:
+        overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black,0.15);
         //in order to be on top of each other
         position:absolute;
@@ -29,13 +32,13 @@
             
             transform: rotateY(180deg);
             &-1{
-                background:linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light );
+                background-image:linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light );
             }
             &-2{
-                background:linear-gradient(to right bottom, $color-primary-dark, $color-primary-light );
+                background-image:linear-gradient(to right bottom, $color-primary-dark, $color-primary-light );
             }
             &-3{
-                background:linear-gradient(to right bottom, $color-tertiary-dark, $color-tertiary-light );
+                background-image:linear-gradient(to right bottom, $color-tertiary-dark, $color-tertiary-light );
             }
         }
     }   
@@ -46,6 +49,74 @@
     }
     &:hover &__side--back{
         transform: rotateY(0);
+    }
+//FRONT side styling
+    &__picture{
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode:screen;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--1{
+            //only one level because it will be written in style.css
+            background-image: linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light ),url(../img/nat-5.jpg);
+        }
+        &--2{
+            //only one level because it will be written in style.css
+            background-image: linear-gradient(to right bottom, $color-primary-dark, $color-primary-light ), url(../img/nat-5.jpg);
+        }
+        &--3{
+            //only one level because it will be written in style.css
+            background-image:linear-gradient(to right bottom, $color-tertiary-dark, $color-tertiary-light ), url(../img/nat-5.jpg);
+        }
+    }
+    &__heading{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        //to be in the piscture
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+    }
+    &__heading-span{
+        padding: 1rem 1.5rem;
+        //treat both line like separate elements so padding is on both words
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &--1{
+            background-image: linear-gradient(to right bottom ,
+                rgba($color-secondary-dark,.85) ,rgba($color-secondary-light,.85));
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom ,
+                rgba($color-primary-dark,.85) ,rgba($color-primary-light,.85));
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom ,
+                rgba($color-tertiary-dark,.85) ,rgba($color-tertiary-light,.85));
+        }
+    }
+    &__details{
+        padding: 0 3rem;
+        ul{
+            list-style: none;
+            width: 80%;
+            //centering 
+            margin: 0 auto;
+
+            li{
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+            }
+        }
     }
    
 }
